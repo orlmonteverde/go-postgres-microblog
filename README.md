@@ -20,6 +20,10 @@ The following dependencies are required:
 
 * github.com/joho/godotenv
 
+* github.com/lib/pq
+
+* golang.org/x/crypto
+
 #### Using GOPATH
 
 ```bash
@@ -27,6 +31,9 @@ go get github.com/go-chi/chi
 
 go get github.com/joho/godotenv
 
+go get github.com/lib/pq
+
+go get golang.org/x/crypto
 ```
 
 #### Using GOMODULE
