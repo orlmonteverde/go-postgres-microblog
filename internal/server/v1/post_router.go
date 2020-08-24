@@ -7,6 +7,7 @@ import (
 	"strconv"
 
 	"github.com/go-chi/chi"
+	"github.com/orlmonteverde/go-postgres-microblog/internal/middleware"
 	"github.com/orlmonteverde/go-postgres-microblog/pkg/post"
 	"github.com/orlmonteverde/go-postgres-microblog/pkg/response"
 )
@@ -143,6 +144,8 @@ func (pr *PostRouter) GetByUserHandler(w http.ResponseWriter, r *http.Request) {
 // Routes returns post router with each endpoint.
 func (pr *PostRouter) Routes() http.Handler {
 	r := chi.NewRouter()
+
+	r.Use(middleware.Authorizator)
 
 	r.Get("/user/{userId}", pr.GetByUserHandler)
 

@@ -6,6 +6,7 @@ import (
 	"time"
 
 	"github.com/go-chi/chi"
+	"github.com/go-chi/chi/middleware"
 	v1 "github.com/orlmonteverde/go-postgres-microblog/internal/server/v1"
 )
 
@@ -17,6 +18,9 @@ type Server struct {
 // New inicialize a new server with configuration.
 func New(port string) (*Server, error) {
 	r := chi.NewRouter()
+
+	r.Use(middleware.Logger)
+	r.Use(middleware.Recoverer)
 
 	r.Mount("/api/v1", v1.New())
 

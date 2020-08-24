@@ -24,6 +24,8 @@ The following dependencies are required:
 
 * golang.org/x/crypto
 
+* github.com/dgrijalva/jwt-go
+
 #### Using GOPATH
 
 ```bash
@@ -34,6 +36,8 @@ go get github.com/joho/godotenv
 go get github.com/lib/pq
 
 go get golang.org/x/crypto
+
+go get github.com/dgrijalva/jwt-go
 ```
 
 #### Using GOMODULE
